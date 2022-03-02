@@ -18,7 +18,7 @@ tokenURIs  Type String array to contain URI of NFT.
  
  
  
- ### Function and code Dicription of newmarket.sol
+ ### Function and code Discription of newmarket.sol
  
  Here i import newnft.sol after that i create a Contract and use 4 global variable and a structure of offer.these are
  1. offerCount type int and increament in offrer generation.
