@@ -14,8 +14,8 @@ tokenURIs  Type String to contain URI of NFT.
  
  there are i use two functions 
  1. tokenURI - I use it to find NFT URI on the behalf of id.
- 2. safeMint - In safeMint function i pass uri string which going to mint
- --- in first line of function i have checked uniqueness of token.
+ 2. safeMint - In safeMint function i pass uri string which going to mint \n
+ --- in first line of function i have checked uniqueness of token. \n
  --- in second line of function i have pish Uri string into the tokenURIs array.
  --- in thired line of function i have get length of tokenURIs array and assign it into the fiunction variable _id. 
  --- in fourth line of function i have mapped _id to uri (its for uniqueness)
