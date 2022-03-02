@@ -26,14 +26,14 @@ tokenURIs  Type String array to contain URI of NFT.
  3. userFunds its a mapping variable address(ETH address) => uint(fund)
  4. nftCAmit its a instance of  NFTAmit contract.
   
-  struct _Offer {
-    uint offerId  -- its use for unique offerid  
-    uint id       -- NFT id which is created by NFTAmit contract 
-    address user; -- offer creator address
-    uint price;   -- NFT price
-    bool fulfilled; -- its a flag shows NFT Sold or Not
+  struct _Offer { <br />
+    uint offerId;   -- its use for unique offerid  <br />
+    uint id ;       -- NFT id which is created by NFTAmit contract <br />
+    address user;   -- offer creator address <br />
+    uint price;     -- NFT price <br />
+    bool fulfilled; -- its a flag shows NFT Sold or Not <br />
     
-  }
+  } <br />
  
  in constructor i have pass address of NFTAmit contract and create an object that is nftCAmit.
  
