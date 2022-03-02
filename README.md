@@ -49,7 +49,25 @@ tokenURIs  Type String to contain URI of NFT.
     increament offerCount variable (array index start with 0 so we avoid this).
     and now we create offer by filling _offer structure attribute(offerId = offerCount, id = _id, user= msg.sender, price= _price, fulfilled= false) and map with offerCount. 
 
-2. fillOffer(_offerId) - 
+2. fillOffer(_offerId) - This function used buy NFT from Market and update status of fulfilled = true .in this funtion first we retrive offer on the behalf of _offerId which is passed as input of function .Then i check certain checks like offer exixt or not, owner cont buy its on NFT, NFT alredy sold, eth value the NFT Price. after that i change   NFT owner by using nftCAmit.transferFrom(address(this), msg.sender, _offer.id) function . here address(this) is contain address of Market contract, msg.sender is contain buyer address and _offer.id contains NFT id which is created by NFTAmit contract.at in last i update fulfilled true and update seller fund in market contract.
+
+3. claimFunds() - This function used to claim fund which is received by selling NFT.
+
+4. fallback () - This function used to reverts if Ether is sent to this smart-contract by mistake.
+
+
+## How to Compile and Deploy these smart Contract
+1. Open remix IDE(https://remix.ethereum.org/).
+2. Create newnft.sol and newmarket.sol
+3. Compile both solidty files.
+4. Deploy NFTAmit-newnft.sol Then Deploy Market-newmarket.sol with NFTAmit contract address.
+
+## Test
+1. Mint a NFT by entering _tokenURI safeMint .
+2. Create offer by using makeOffer ,here you can enter NFT id and price. ("ERC721: transfer caller is not owner nor approved".it can be resolve by setting Market contract address as operator and flag true in setApprovalForAll in NFTAmit )
+3. 
+4. 
+
 
  
  
