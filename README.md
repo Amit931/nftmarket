@@ -33,9 +33,9 @@ tokenURIs  Type String array to contain URI of NFT.  <br />
     uint price;     -- NFT price <br />
     bool fulfilled; -- its a flag shows NFT Sold or Not <br />
     
-  } <br />
+  } <br /><br />
  
- in constructor i have pass address of NFTAmit contract and create an object that is nftCAmit.<br />
+ In constructor i have pass address of NFTAmit contract and create an object that is nftCAmit.<br />
  
  i have used four basic functions in it.<br />
  1. makeOffer(_id, _price) - we create offer by using this function, here i use nftCAmit.transferFrom(msg.sender, address(this), _id) function . 
