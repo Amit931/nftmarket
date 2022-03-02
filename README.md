@@ -14,8 +14,8 @@ tokenURIs  Type String to contain URI of NFT.
  
  there are i use two functions 
  1. tokenURI - I use it to find NFT URI on the behalf of id.
- 2. safeMint - In safeMint function i pass uri string which going to mint \n
- --- in first line of function i have checked uniqueness of token. \n
+ 2. safeMint - In safeMint function i pass uri string which going to mint 
+ --- in first line of function i have checked uniqueness of token. 
  --- in second line of function i have pish Uri string into the tokenURIs array.
  --- in thired line of function i have get length of tokenURIs array and assign it into the fiunction variable _id. 
  --- in fourth line of function i have mapped _id to uri (its for uniqueness)
@@ -42,6 +42,15 @@ tokenURIs  Type String to contain URI of NFT.
   }
  
  in constructor i have pass address of NFTAmit contract and create an object that is nftCAmit.
+ 
+ i have used four basicfunctionds in it.
+ 1. makeOffer(_id, _price) - we create offer by using this function, here i use nftCAmit.transferFrom(msg.sender, address(this), _id) function . 
+    Here msg.sender is a glbal veriable and in this function it's contain offer creator address, address(this contain contract address of Market) and _id contains  NFT id which is created by NFTAmit contract.
+    increament offerCount variable (array index start with 0 so we avoid this).
+    and now we create offer by filling _offer structure attribute(offerId = offerCount, id = _id, user= msg.sender, price= _price, fulfilled= false) and map with offerCount. 
+
+2. fillOffer(_offerId) - 
+
  
  
 
