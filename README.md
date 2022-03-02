@@ -1,10 +1,10 @@
-# Sample NFT
+# Simple NFT
 Solidity Contracts of simple NFT Mint and Marketplace
 
-## Dicription
+## Discription
 I have write a code for mint a simple NFT by using openzeppelin lib in newnft.sol file and create a simple market place in newmarket.sol file.
 
-### Function and code Dicription of newnft.sol
+### Function and code Discription of newnft.sol
 
 Here I import ERC721.sol from openzeppelin lib. and create a contract NFTAmit which is inherited by ERC721.In this contarct i have used 3 variable these are:
 
