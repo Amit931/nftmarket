@@ -13,8 +13,8 @@ tokenURIs  Type String array to contain URI of NFT.  <br />
  _tokenIdToTokenURI it's a mapping variable uint(NFT id) => string(URI). <br />
  
  there are i use two functions 
- 1. tokenURI - I use it to find NFT URI on the behalf of id.<br />
- 2. safeMint - In safeMint function i pass uri string which is going to mint. In first line of function i have checked uniqueness of token. In second line of function i have pUsh Uri string into the tokenURIs array.In thired line of function i have get length of tokenURIs array and assign it into the fiunction variable _id. In fourth line of function i have mapped _id to uri (its for uniqueness). Now we have to go mint so i use _safeMint function its defination is written in ERC721 . And in the last  i update _tokenURIExists = true <br />
+ 1. tokenURI() - I use it to find NFT URI on the behalf of id.<br />
+ 2. safeMint() - In safeMint function i pass uri string which is going to mint. In first line of function i have checked uniqueness of token. In second line of function i have pUsh Uri string into the tokenURIs array.In thired line of function i have get length of tokenURIs array and assign it into the fiunction variable _id. In fourth line of function i have mapped _id to uri (its for uniqueness). Now we have to go mint so i use _safeMint function its defination is written in ERC721 . And in the last  i update _tokenURIExists = true <br />
  
  
  
