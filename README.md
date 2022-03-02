@@ -63,12 +63,13 @@ tokenURIs  Type String to contain URI of NFT.
 4. Deploy NFTAmit-newnft.sol Then Deploy Market-newmarket.sol with NFTAmit contract address.
 
 ## Test
-1. Mint a NFT by entering _tokenURI safeMint .
-2. Create offer by using makeOffer ,here you can enter NFT id and price. ("ERC721: transfer caller is not owner nor approved".it can be resolve by setting Market contract address as operator and flag true in setApprovalForAll in NFTAmit )
-3. 
-4. 
+1. Mint a NFT by entering _tokenURI safeMint in NFTAmit.
+2. Create offer by using makeOffer in Market ,here you can set NFT id and price. ("ERC721: transfer caller is not owner nor approved".it can be resolve by setting Market contract address as operator and flag true in setApprovalForAll in NFTAmit )
+3. When transaction complete then you can see the owner of NFT (in NFTAmit ) change to Market contract address and offercount increase, you can view that offer in offers.  
+4. Now, change  eth address in remix IDE and purchage that NFT by using fillOffer in Market.("The ETH amount should match with the NFT Price".  it can be resolve by set equal amount of NFT Price in value field of remix IDE before transaction) 
 
-
+5. After successful transaction you can see owner of NFT is changed by purchaser address, And you can also see seller get funds in userFunds.
+6. you can withdraw that funds by using claimFunds in Market.
  
  
 
