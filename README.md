@@ -1,2 +1,2 @@
 # Sample NFT
-Solidity Contracts of simple NFT Mint and Marketplace 
+## Solidity Contracts of simple NFT Mint and Marketplace 
