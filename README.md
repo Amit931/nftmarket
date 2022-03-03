@@ -58,8 +58,25 @@ mapping (uint => _Offer) public offers;  // you can see offer detail by passing 
 #### Buy
 A user can buy those NFT which someone else offered. This will require paying the requested price (the Ether will be transferred to the smart contract to be claimed later on).
 
+##### Function used for fillOffer
+```
+  function fillOffer(uint _offerId) public payable {
+      
+    _Offer storage _offer = offers[_offerId];
+    require(_offer.offerId == _offerId, 'The offer must exist');
+    require(_offer.user != msg.sender, 'The owner of the offer cannot fill it');
+    require(!_offer.fulfilled, 'An offer cannot be fulfilled twice');
+    require(msg.value == _offer.price, 'The ETH amount should match with the NFT Price');
+    nftCAmit.transferFrom(address(this), msg.sender, _offer.id);                   //  it's defination wtitten in ERC721 and used to owner change where msg.sender = buyer address, address(this) = Market address, _offer.id = NFT id
+    _offer.fulfilled = true;                                                       // it's set price of NFT in ETH and set fulfilled variable as true means its  sold.
+    userFunds[_offer.user] += msg.value;                                           
+    emit OfferFilled(_offerId, _offer.id, msg.sender);
+  }
+```
+<img src="https://pbx.toggle.com.co/amitgithub/sold.jpeg" width="250">
+
 #### Claim Funds
-If a user sold an NFT, he can claim his funds by using claimfund module.
+If a user sold an NFT, he can claim his funds by using claimFunds .
 
 
 ## How to Compile and Deploy these smart Contract
