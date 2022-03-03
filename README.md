@@ -68,7 +68,7 @@ A user can buy those NFT which someone else offered. This will require paying th
     require(_offer.user != msg.sender, 'The owner of the offer cannot fill it');
     require(!_offer.fulfilled, 'An offer cannot be fulfilled twice');
     require(msg.value == _offer.price, 'The ETH amount should match with the NFT Price');
-    nftCAmit.transferFrom(address(this), msg.sender, _offer.id);                   //  it's defination wtitten in ERC721 and used to owner change where msg.sender = buyer address, address(this) = Market address, _offer.id = NFT id
+    nftCAmit.transferFrom(address(this), msg.sender, _offer.id);                   //  it's defination wtitten in ERC721 and used to change owner where msg.sender = buyer address, address(this) = Market address, _offer.id = NFT id
     _offer.fulfilled = true;                                                       // it's set price of NFT in ETH and set fulfilled variable as true means its  sold.
     userFunds[_offer.user] += msg.value;                                           
     emit OfferFilled(_offerId, _offer.id, msg.sender);
