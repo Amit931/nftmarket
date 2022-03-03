@@ -99,12 +99,13 @@ If a user sold an NFT, he can claim his funds by using claimFunds .
 
 ## Test
 1. Mint a NFT by entering _tokenURI safeMint in NFTAmit.
-2. Create offer by using makeOffer in Market ,here you can set NFT id and price. ("ERC721: transfer caller is not owner nor approved".it can be resolve by setting Market contract address as operator and flag true in setApprovalForAll in NFTAmit )
-3. When transaction complete then you can see the owner of NFT (in NFTAmit ) change to Market contract address and offercount increase, you can view that offer in offers.  
-4. Now, change  eth address in remix IDE and purchage that NFT by using fillOffer in Market.("The ETH amount should match with the NFT Price".  it can be resolve by set equal amount of NFT Price in value field of remix IDE before transaction) 
+2. Before making an offer Market contract should have permition to list NFT contract NFTs. for this in NFT contract setApprovalForAll function ,set operator = "market contract address" and set Approved = true .
+3. Create offer by using makeOffer in Market ,here you can set NFT id and price.
+4. When transaction complete then you can see the owner of NFT (in NFTAmit ) change to "Market contract address" and offercount increase, you can view that offer in offers.  
+5. Now, change  eth address in remix IDE and purchase that NFT by using fillOffer in Market.("The ETH amount should match with the NFT Price".  it can be resolve by set equal amount of NFT Price in value field of remix IDE before transaction) 
 
-5. After successful transaction you can see owner of NFT is changed by purchaser address, And you can also see seller get funds in userFunds.
-6. you can withdraw that funds by using claimFunds in Market.
+5. After successful transaction you can see owner of NFT is changed to purchaser address, And you can also see seller get funds in userFunds.
+6. Seller can withdraw that funds by using claimFunds in Market.
  
  
 
