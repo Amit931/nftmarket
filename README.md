@@ -50,7 +50,7 @@ The use must input offerid to see the order .
 ```
 mapping (uint => _Offer) public offers;  // you can see offer detail by passing offerid
 ```
-
+<img src="https://pbx.toggle.com.co/amitgithub/viewoffer.jpeg" width="250">
 
 
 
