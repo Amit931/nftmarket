@@ -20,7 +20,7 @@ The user must input URI to mint his own NFT. Once minted,  it will be owned by i
 The user can offer his NFT by specifying its price (in Ether). If someone fulfills this offer, then the ownership is transferred to a new owner.
 
 #### View Offer
-The can view offer by using offers.
+The use must input offerid to see the order .
 
 
 #### Buy
