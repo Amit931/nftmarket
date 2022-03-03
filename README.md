@@ -3,7 +3,7 @@ Solidity Contracts of simple NFT Mint and Marketplace based on openZeppelin ERC7
 
 
 ### Dependencies
-This project relies on NFT Contracts .
+This project relies on openZeppelin ERC721 contracts.
 
 
 ### Tech-Stack
@@ -39,13 +39,13 @@ The user can offer his NFT by specifying its price (in Ether). If someone fulfil
 function makeOffer(uint _id, uint _price) public {
     nftCAmit.transferFrom(msg.sender, address(this), _id);                //  it's defination wtitten in ERC721 and used to list offer in market place where msg.sender = creator address, address(this) = Market address, _id = NFT id
     offerCount ++;
-    offers[offerCount] = _Offer(offerCount, _id, msg.sender, _price, false);  // it's set price of NFT in ETH and set fulfilled variable as false means its not sold.
+    offers[offerCount] = _Offer(offerCount, _id, msg.sender, _price, false);  // it's set price of NFT in ETH and set fulfilled variable as false means it's not sold.
     emit Offer(offerCount, _id, msg.sender, _price, false);
   }
 ```
 
 #### View Offer
-The use must input offerid to see the order .
+The user must input offerid to see the order .
 
 ##### Mapping used for view offer
 ```
