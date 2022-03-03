@@ -46,6 +46,14 @@ function makeOffer(uint _id, uint _price) public {
 #### View Offer
 The use must input offerid to see the order .
 
+##### Mapping used for view offer
+```
+mapping (uint => _Offer) public offers;  // you can see offer detail by passing offerid
+```
+
+
+
+
 
 #### Buy
 A user can buy those NFT which someone else offered. This will require paying the requested price (the Ether will be transferred to the smart contract to be claimed later on).
