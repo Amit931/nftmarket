@@ -3,13 +3,14 @@ Solidity Contracts of simple NFT Mint and Marketplace based on openZeppelin ERC7
 
 
 ### Dependencies
-This project relies on NFT Contracts package
+This project relies on NFT Contracts .
 
 
 ### Tech-Stack
  -  Solidity
  -  openZeppelin
  -  Metamask (web3)
+ -  remix IDE
 
 ### Functionalities
 
