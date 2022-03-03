@@ -17,7 +17,7 @@ This project relies on NFT Contracts package
 The user must input URI to mint his own NFT. Once minted,  it will be owned by its creator. 
 
 ##### Function useed in Mint
-`code()`  function safeMint(string memory _tokenURI) public {
+```  function safeMint(string memory _tokenURI) public {
     require(!_tokenURIExists[_tokenURI], 'The token URI should be unique');
     tokenURIs.push(_tokenURI);    
     uint _id = tokenURIs.length;
@@ -25,6 +25,7 @@ The user must input URI to mint his own NFT. Once minted,  it will be owned by i
     _safeMint(msg.sender, _id);
     _tokenURIExists[_tokenURI] = true;
   }
+ ```
 
 ##### Make Offer
 The user can offer his NFT by specifying its price (in Ether). If someone fulfills this offer, then the ownership is transferred to a new owner.
