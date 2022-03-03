@@ -16,13 +16,13 @@ This project relies on NFT Contracts package
 #### Mint
 The user must input URI to mint his own NFT. Once minted,  it will be owned by its creator. 
 
-##### Function useed in Mint
+##### Function used in Mint NFT
 ```  function safeMint(string memory _tokenURI) public {
     require(!_tokenURIExists[_tokenURI], 'The token URI should be unique');
     tokenURIs.push(_tokenURI);    
     uint _id = tokenURIs.length;
     _tokenIdToTokenURI[_id] = _tokenURI;
-    _safeMint(msg.sender, _id);
+    _safeMint(msg.sender, _id);                      // it's defination wtitten in ERC721  
     _tokenURIExists[_tokenURI] = true;
   }
  ```
