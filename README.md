@@ -19,6 +19,8 @@ The user must input _tokenURI to mint his own NFT. Once minted,  it will be owne
 
 ##### Function used in Mint NFT
  ```
+File name - newnft.sol.
+
 function safeMint(string memory _tokenURI) public {
     require(!_tokenURIExists[_tokenURI], 'The token URI should be unique');
     tokenURIs.push(_tokenURI);    
@@ -36,6 +38,7 @@ The user can offer his NFT by specifying its price (in Ether). If someone fulfil
 ##### Function used for make offer
 
 ```
+File name - newnft.sol.
 function makeOffer(uint _id, uint _price) public {
     nftCAmit.transferFrom(msg.sender, address(this), _id);                //  it's defination wtitten in ERC721 and used to list offer in market place where msg.sender = creator address, address(this) = Market address, _id = NFT id
     offerCount ++;
