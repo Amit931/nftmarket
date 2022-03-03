@@ -56,7 +56,7 @@ File name - newmarket.sol
 
  struct _Offer {
     uint offerId;
-    uint id;
+    uint id;    // NFT id
     address user;
     uint price;
     bool fulfilled;
