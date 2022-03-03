@@ -98,6 +98,20 @@ File name - newmarket.sol
 #### Claim Funds
 If a user sold an NFT, he can claim his funds by using claimFunds .
 
+##### Function used for claimFunds
+```
+File name - newmarket.sol
+
+ function claimFunds() public {
+    require(userFunds[msg.sender] > 0, 'This user has no funds to be claimed');
+    payable(msg.sender).transfer(userFunds[msg.sender]);
+    emit ClaimFunds(msg.sender, userFunds[msg.sender]);
+    userFunds[msg.sender] = 0;    
+  }
+```
+
+
+
 
 ## How to Compile and Deploy these smart Contract
 1. Open remix IDE(https://remix.ethereum.org/).
