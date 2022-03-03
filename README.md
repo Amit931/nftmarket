@@ -46,6 +46,17 @@ function makeOffer(uint _id, uint _price) public {
 
 #### View Offer
 The user must input offerid to see the order .
+Offer structure on the market place is like this:
+```
+ struct _Offer {
+    uint offerId;
+    uint id;
+    address user;
+    uint price;
+    bool fulfilled;
+    
+  }
+```
 
 ##### Mapping used for view offer
 ```
