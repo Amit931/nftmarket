@@ -13,9 +13,9 @@ This project relies on NFT Contracts package
 5. Claim funds
 
 ### Tech-Stack
-Markup : *  Solidity
-Markup : *  openZeppelin
-Markup : *  Metamask (web3)
+Markup : -  Solidity
+Markup : -  openZeppelin
+Markup : -  Metamask (web3)
 
 
 
