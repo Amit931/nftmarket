@@ -38,7 +38,8 @@ The user can offer his NFT by specifying its price (in Ether). If someone fulfil
 ##### Function used for make offer
 
 ```
-File name - newnft.sol.
+File name - newmarket.sol
+
 function makeOffer(uint _id, uint _price) public {
     nftCAmit.transferFrom(msg.sender, address(this), _id);                //  it's defination wtitten in ERC721 and used to list offer in market place where msg.sender = creator address, address(this) = Market address, _id = NFT id
     offerCount ++;
@@ -51,6 +52,8 @@ function makeOffer(uint _id, uint _price) public {
 The user must input offerid to see the order .
 Offer structure on the market place is like this:
 ```
+File name - newmarket.sol
+
  struct _Offer {
     uint offerId;
     uint id;
@@ -75,6 +78,8 @@ A user can buy those NFT which someone else offered. This will require paying th
 
 ##### Function used for fillOffer
 ```
+File name - newmarket.sol
+
   function fillOffer(uint _offerId) public payable {
       
     _Offer storage _offer = offers[_offerId];
