@@ -5,66 +5,29 @@ Solidity Contracts of simple NFT Mint and Marketplace based on openZeppelin ERC7
 ### Dependencies
 This project relies on NFT Contracts package
 
-### Functionalities
-1. Minting tokens
-2. Adding tokens from in marketplace.
-3. Buy a pre-minted token.
-4. Transferring ETH to the previous token holder.
-5. Claim funds
 
 ### Tech-Stack
  -  Solidity
  -  openZeppelin
  -  Metamask (web3)
 
+### Functionalities
+
+#### Mint
+The user must input URI to mint his own NFT. Once minted,  it will be owned by its creator. 
+
+##### Make Offer
+The user can offer his NFT by specifying its price (in Ether). If someone fulfills this offer, then the ownership is transferred to a new owner.
+
+#### View Offer
+The can view offer by using offers.
 
 
+#### Buy
+A user can buy those NFT which someone else offered. This will require paying the requested price (the Ether will be transferred to the smart contract to be claimed later on).
 
-
-### Function and code Discription of newnft.sol
-
-Here I import ERC721.sol from openzeppelin lib. and create a contract NFTAmit which is inherited by ERC721.In this contarct i have used 3 variable these are:
-
-tokenURIs  Type String array to contain URI of NFT.  <br />
- _tokenURIExists it's a mapping variable string(URI) => bool ,to check is URI exist or not (uri is a unique for every NFT). <br />
- _tokenIdToTokenURI it's a mapping variable uint(NFT id) => string(URI). <br />
- 
- there are i use two functions 
- 1. tokenURI() - I use it to find NFT URI on the behalf of id.<br />
- 2. safeMint() - In safeMint function i pass uri string which is going to mint. In first line of function i have checked uniqueness of token. In second line of function i have pUsh Uri string into the tokenURIs array.In thired line of function i have get length of tokenURIs array and assign it into the fiunction variable _id. In fourth line of function i have mapped _id to uri (its for uniqueness). Now we have to go mint so i use _safeMint function its defination is written in ERC721 . And in the last  i update _tokenURIExists = true <br />
- 
- 
- 
- ### Function and code Discription of newmarket.sol
- 
- Here i import newnft.sol after that i create a Contract and use 4 global variable and a structure of offer.these are <br />
- 1. offerCount type int and increament in offrer generation.
- 2. offers its a mapping variable id(offerid) => _offer(structure);
- 3. userFunds its a mapping variable address(ETH address) => uint(fund)
- 4. nftCAmit its a instance of  NFTAmit contract.
-  
-  struct _Offer { <br />
-    uint offerId;   -- its use for unique offerid  <br />
-    uint id ;       -- NFT id which is created by NFTAmit contract <br />
-    address user;   -- offer creator address <br />
-    uint price;     -- NFT price <br />
-    bool fulfilled; -- its a flag shows NFT Sold or Not <br />
-    
-  } <br /><br />
- 
- In constructor i have pass address of NFTAmit contract and create an object that is nftCAmit.<br />
- 
- i have used four basic functions in it.<br />
- 1. makeOffer(_id, _price) - we create offer by using this function, here i use nftCAmit.transferFrom(msg.sender, address(this), _id) function . 
-    Here msg.sender is a glbal veriable and in this function it's contain offer creator address, address(this contain contract address of Market) and _id contains  NFT id which is created by NFTAmit contract.
-    increament offerCount variable (array index start with 0 so we avoid this).
-    and now we create offer by filling _offer structure attribute(offerId = offerCount, id = _id, user= msg.sender, price= _price, fulfilled= false) and map with offerCount. 
-
-2. fillOffer(_offerId) - This function used to buy NFT from Market and update status of fulfilled = true .in this funtion first we retrive offer on the behalf of _offerId which is passed as input of function .Then i check certain checks like offer exists or not, owner con't buy its on NFT, NFT alredy sold, eth value is equal to NFT Price. after that i change   NFT owner by using nftCAmit.transferFrom(address(this), msg.sender, _offer.id) function . here address(this) is contain address of Market contract, msg.sender is contain buyer address and _offer.id contains NFT id which is created by NFTAmit contract.at in last i update fulfilled flag true and update seller fund in market contract.
-
-3. claimFunds() - This function used to claim fund which is received by selling NFT.
-
-4. fallback () - This function used to reverts if Ether is sent to this smart-contract by mistake.
+#### Claim Funds
+If a user sold an NFT, he can claim his funds by using claimfund module.
 
 
 ## How to Compile and Deploy these smart Contract
