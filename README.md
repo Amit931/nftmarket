@@ -1,8 +1,8 @@
-# Simple NFT
-Solidity Contracts of simple NFT Mint and Marketplace
+# ERC721 NFT Marketplace
+Solidity Contracts of simple NFT Mint and Marketplace based on openZeppelin abstract upgradeable ERC721 contracts.
 
-## Discription
-I have write a code for mint a simple NFT by using openzeppelin lib in newnft.sol file and create a simple market place in newmarket.sol file.
+
+
 
 ### Function and code Discription of newnft.sol
 
