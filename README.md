@@ -14,7 +14,7 @@ This project relies on NFT Contracts package
 ### Functionalities
 
 #### Mint
-The user must input URI to mint his own NFT. Once minted,  it will be owned by its creator. 
+The user must input _tokenURI to mint his own NFT. Once minted,  it will be owned by its creator. 
 
 ##### Function used in Mint NFT
  ```
@@ -23,13 +23,25 @@ function safeMint(string memory _tokenURI) public {
     tokenURIs.push(_tokenURI);    
     uint _id = tokenURIs.length;
     _tokenIdToTokenURI[_id] = _tokenURI;
-    _safeMint(msg.sender, _id);                      // it's defination wtitten in ERC721  
+    _safeMint(msg.sender, _id);                      // it's defination wtitten in ERC721 And used for mint NFT 
     _tokenURIExists[_tokenURI] = true;
   }
  ```
 
 ##### Make Offer
+
 The user can offer his NFT by specifying its price (in Ether). If someone fulfills this offer, then the ownership is transferred to a new owner.
+
+##### Function used for make offer
+
+```
+function makeOffer(uint _id, uint _price) public {
+    nftCAmit.transferFrom(msg.sender, address(this), _id);                //  it's defination wtitten in ERC721 and used to list offer in market place where msg.sender = creator address, address(this) = Market address, _id = NFT id
+    offerCount ++;
+    offers[offerCount] = _Offer(offerCount, _id, msg.sender, _price, false);  // it's set price of NFT in ETH and set fulfilled variable as false means its not sold.
+    emit Offer(offerCount, _id, msg.sender, _price, false);
+  }
+```
 
 #### View Offer
 The use must input offerid to see the order .
