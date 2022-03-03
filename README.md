@@ -1,5 +1,22 @@
 # ERC721 NFT Marketplace
-Solidity Contracts of simple NFT Mint and Marketplace based on openZeppelin abstract upgradeable ERC721 contracts.
+Solidity Contracts of simple NFT Mint and Marketplace based on openZeppelin ERC721 contracts.
+
+
+### Dependencies
+This project relies on NFT Contracts package
+
+### Functionalities
+1. Minting tokens
+2. Adding tokens from in marketplace.
+3. Buy a pre-minted token.
+4. Transferring ETH to the previous token holder.
+5. Claim funds
+
+### Tech-Stack
+Markup : * Solidity
+Markup : * openZeppelin
+Markup : * Metamask (web3)
+
 
 
 
